@@ -3,7 +3,7 @@ python:
   - stable
 
 before_install:
-  - pip install robotframework
+  - pip install robotframewor
   - pip install robotframework-seleniumlibrary
 
 install: true
