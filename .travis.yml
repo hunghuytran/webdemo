@@ -5,6 +5,10 @@ before_install:
 
 before_script:
     - python3 -m http.server &
+    - wget https://github.com/mozilla/geckodriver/releases/download/v0.18.0/geckodriver-v0.18.0-linux64.tar.gz
+    - mkdir geckodriver
+    - tar zxvf geckodriver-v0.18.0-linux64.tar.gz -C geckodriver
+    - export PATH=$PATH:$PWD/geckodriver
 
 script:
     - pybot login_tests
