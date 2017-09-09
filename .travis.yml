@@ -1,16 +1,15 @@
-language: java
-jdk:
-- openjdk8
+language: python
 
 addons:
   firefox: "55.0.3"
 
 before_install:
+  - pip install -r requirements.txt
   - pip install robotframework
   - pip install robotframework-seleniumlibrary
 
 before_script:
-  - pybot demoapp/server.py &
+  - python demoapp/server.py &
   - wget https://github.com/mozilla/geckodriver/releases/download/v0.18.0/geckodriver-v0.18.0-linux64.tar.gz
   - mkdir geckodriver
   - tar zxvf geckodriver-v0.18.0-linux64.tar.gz -C geckodriver
