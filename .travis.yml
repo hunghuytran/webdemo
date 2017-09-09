@@ -1,6 +1,4 @@
-language: java
-jdk:
-- openjdk8
+language: python
 
 addons:
   firefox: "55.0.3"
@@ -9,10 +7,8 @@ addons:
 before_install:
   - pip install -r requirements.txt
 
-
-
 before_script:
-  - python demoapp/server.py &
+  - python3 -m http.server &
   - wget https://github.com/mozilla/geckodriver/releases/download/v0.18.0/geckodriver-v0.18.0-linux64.tar.gz
   - mkdir geckodriver
   - tar zxvf geckodriver-v0.18.0-linux64.tar.gz -C geckodriver
