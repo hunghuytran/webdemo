@@ -3,10 +3,8 @@ python:
   - stable
 
 before_install:
-  - pip install robotframework
-  - pip install robotframework-seleniumlibrary
+    - pip install -r login_tests/requirements.txt
 
-install: true
 
 before_script:
     - python3 -m http.server
