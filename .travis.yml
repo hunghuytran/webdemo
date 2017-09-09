@@ -1,11 +1,7 @@
 language: python
 
-dist: trusty
 addons:
-  chrome: stable
-before_install:
-  - # start your web application and listen on `localhost`
-  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=8000 http://localhost
+firefox: "55.0.3"
 
 before_install:
     - pip install -r login_tests/requirements.txt
