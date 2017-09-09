@@ -1,20 +1,16 @@
 language: python
 
 addons:
-firefox: "55.0.3"
+  firefox: "55.0.3"
 
 before_install:
-    - pip install -r login_tests/requirements.txt
-    - pip install robotframework
-    - pip install robotframework-seleniumlibrary
-
-install: true
-
+  - pip install -r login_tests/requirements.txt
 
 before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
   - sleep 3 # give xvfb some time to start
 
+
 script:
-  - robot login_tests
+  - pybot login_tests
