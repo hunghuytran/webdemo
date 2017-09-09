@@ -1,23 +1,24 @@
-language: python
+language: java
+jdk:
+- openjdk8
 
-dist: trusty
 addons:
-  chrome: stable
-before_install:
-  - # start your web application and listen on `localhost`
-  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=8000 http://localhost &
+  firefox: "55.0.3"
+
 
 before_install:
-    - pip install -r requirements.txt
-    - pip install robotframework
-    - pip install robotframework-seleniumlibrary
+  - pip install -r requirements.txt
+
+
 
 before_script:
-    - python3 -m http.server &
-    - wget https://github.com/mozilla/geckodriver/releases/download/v0.18.0/geckodriver-v0.18.0-linux64.tar.gz
-    - mkdir geckodriver
-    - tar zxvf geckodriver-v0.18.0-linux64.tar.gz -C geckodriver
-    - export PATH=$PATH:$PWD/geckodriver
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+  - sleep 3 # give xvfb some time to start
+  - wget https://github.com/mozilla/geckodriver/releases/download/v0.18.0/geckodriver-v0.18.0-linux64.tar.gz
+  - mkdir geckodriver
+  - tar zxvf geckodriver-v0.18.0-linux64.tar.gz -C geckodriver
+  - export PATH=$PATH:$PWD/geckodriver
 
 script:
-    - pybot --variable BROWSER:Chrome login_tests
+- pybot login_tests
