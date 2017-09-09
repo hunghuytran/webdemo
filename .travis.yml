@@ -14,7 +14,7 @@ before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
   - sleep 3 # give xvfb some time to start
-  - python demoapp/serverpy 7272 &
+  - python3 -m http.server &
   - sleep 3
   - wget https://github.com/mozilla/geckodriver/releases/download/v0.18.0/geckodriver-v0.18.0-linux64.tar.gz
   - mkdir geckodriver
