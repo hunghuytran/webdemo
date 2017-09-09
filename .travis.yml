@@ -1,22 +1,10 @@
 language: python
 
-dist: trusty
-addons:
-  chrome: stable
 before_install:
-  - # start your web application and listen on `localhost`
-  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=8000 http://localhost
-
-before_install:
-  - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1280x1024x16"
-  - pip install -r login_tests/requirements.txt
+    - pip install -r requirements.txt
 
 before_script:
-  - wget https://github.com/mozilla/geckodriver/releases/download/v0.18.0/geckodriver-v0.18.0-linux64.tar.gz
-  - mkdir geckodriver
-  - tar zxvf geckodriver-v0.18.0-linux64.tar.gz -C geckodriver
-  - export PATH=$PATH:$PWD/geckodriver
+    - python3 -m http.server &
 
 script:
-  - python demoapp/server.py
-  - pybot login_tests
+    - pybot login_tests
