@@ -1,6 +1,4 @@
 language: python
-python:
-  - stable
 
 before_install:
     - pip install -r login_tests/requirements.txt
@@ -10,4 +8,4 @@ before_script:
     - python3 -m http.server
 
 script:
-  - pybot login_tests
+  - pybot login_tests/
