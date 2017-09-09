@@ -10,6 +10,7 @@ before_install:
 
 before_script:
   - python3 -m http.server &
+  - sleep 3
   - wget https://github.com/mozilla/geckodriver/releases/download/v0.18.0/geckodriver-v0.18.0-linux64.tar.gz
   - mkdir geckodriver
   - tar zxvf geckodriver-v0.18.0-linux64.tar.gz -C geckodriver
