@@ -12,7 +12,7 @@ ${BROWSER}        firefox
 ${DELAY}          0
 ${VALID USER}     demo
 ${VALID PASSWORD}    mode
-${LOGIN URL}      http://${SERVER}/
+${LOGIN URL}      http://${SERVER}/index.html
 ${WELCOME URL}    http://${SERVER}/welcome.html
 ${ERROR URL}      http://${SERVER}/error.html
 
