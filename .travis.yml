@@ -1,5 +1,8 @@
 language: python
 
+addons:
+  firefox: "55.0.3"
+
 before_install:
   - pip install -r requirements.txt
 
