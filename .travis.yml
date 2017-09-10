@@ -13,9 +13,11 @@ install: true
 before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
-  - sleep 3 # give xvfb some time to start
+  - sleep 3
+  - cd demoapp/html
   - python3 -m http.server &
   - sleep 3
+  - cd -
   - wget https://github.com/mozilla/geckodriver/releases/download/v0.18.0/geckodriver-v0.18.0-linux64.tar.gz
   - mkdir geckodriver
   - tar zxvf geckodriver-v0.18.0-linux64.tar.gz -C geckodriver
