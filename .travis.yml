@@ -22,5 +22,4 @@ before_script:
   - export PATH=$PATH:$PWD/geckodriver
 
 script:
-  - pybot test-sample &
-  - pybot robot
+  - pybot test-sample
