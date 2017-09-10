@@ -2,7 +2,7 @@
 Library     Selenium2Library
 
 *** Variables ***
-${URL}          http://localhost:8080
+${URL}          http://localhost:8080/index.html
 
 *** Keywords ***
 Open Browser to application page
